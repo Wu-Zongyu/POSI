@@ -36,7 +36,19 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
     --plot_loss True
 ```
 ## PPO Training
-For PPO training, a reward model needs to be trained as a place holder first.
+For PPO training, a reward model needs to be trained as a placeholder first.
 
 ## Acknowledgement
 Our code is based on [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory). Thanks for their fantastic work!
+
+## Citation
+Please kindly cite our paper if you think our work is helpful:
+
+```
+@article{wu2024universal,
+  title={Universal prompt optimizer for safe text-to-image generation},
+  author={Wu, Zongyu and Gao, Hongcheng and Wang, Yueze and Zhang, Xiang and Wang, Suhang},
+  journal={arXiv preprint arXiv:2402.10882},
+  year={2024}
+}
+```
