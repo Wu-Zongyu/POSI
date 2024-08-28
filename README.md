@@ -38,6 +38,49 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 ## PPO Training
 For PPO training, a reward model needs to be trained as a placeholder first.
 
+The script for PPO training is
+```bash
+CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
+    --stage ppo \
+    --model_name_or_path huggyllama/llama-7b \
+    --do_train True \
+    --checkpoint_dir saves/LLaMA-7B/lora/SFT \
+    --finetuning_type lora \
+    --template default \
+    --flash_attn False \
+    --shift_attn False \
+    --dataset_dir data \
+    --dataset ppo_data \
+    --cutoff_len 1024 \
+    --learning_rate 1.9e-05 \
+    --num_train_epochs 1.0 \
+    --max_samples 100000 \
+    --per_device_train_batch_size 4 \
+    --gradient_accumulation_steps 4 \
+    --lr_scheduler_type cosine \
+    --max_grad_norm 1.0 \
+    --logging_steps 5 \
+    --save_steps 5 \
+    --warmup_steps 0 \
+    --neft_alpha 0 \
+    --train_on_prompt False \
+    --upcast_layernorm False \
+    --lora_rank 8 \
+    --lora_dropout 0.1 \
+    --lora_target q_proj,v_proj \
+    --resume_lora_training False \
+    --output_dir saves/LLaMA-7B/lora/PPO \
+    --fp16 True \
+    --reward_model saves/LLaMA-7B/lora/rm_test \
+    --reward_model_type lora \
+    --ppo_target 0.02 \
+    --plot_loss True
+
+
+
+```
+
+
 ## Acknowledgement
 Our code is based on [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory). Thanks for their fantastic work!
 
