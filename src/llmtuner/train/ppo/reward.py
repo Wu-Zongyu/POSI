@@ -116,7 +116,7 @@ def reward_score(prompt):
     Q16_score_list = []
     clip_score_list = []
     for i, image in enumerate(images):
-        path = f"LLaMA-Factory/images/{i}.png"
+        path = f"images/{i}.png"
         image.save(path)
         img = Image.open(path)
         Q16_score_list.append(m.score(img))
