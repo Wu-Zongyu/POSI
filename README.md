@@ -36,7 +36,7 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
     --plot_loss True
 ```
 ## PPO Training
-For PPO training, a reward model needs to be trained as a placeholder first. Using the following script to train the placeholder:
+For PPO training, a reward model needs to be trained as a placeholder first. Use the following script to train the placeholder:
 ```bash
 CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
     --stage rm \
