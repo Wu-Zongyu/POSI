@@ -213,6 +213,17 @@
     },
     "ranking": true
   },
+    "oaast_rm_short": {
+    "file_name": "oaast_rm_short.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": "history"
+    },
+    "ranking": true
+  },
+  
   "oaast_rm_zh": {
     "file_name": "oaast_rm_zh.json",
     "file_sha1": "1065af1f3784dd61be5e79713a35f427b713a232",
